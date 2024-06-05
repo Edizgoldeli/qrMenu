@@ -1,5 +1,7 @@
 <?php 
 require_once "PHP/dbConnection.php";
+session_start();
+
 $direct = new Url;
 $p = new Hash;
 
