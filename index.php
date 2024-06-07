@@ -3,7 +3,6 @@ require_once "PHP/dbConnection.php";
 session_start();
 
 $direct = new Url;
-$p = new Hash;
 
 ?>
 <a href="<?php $direct->directory("","index"); ?>"><img src="/qrMenu/images/return.png" alt="Geri dön" style="width:50px;height:50px; float: left;"></a>
