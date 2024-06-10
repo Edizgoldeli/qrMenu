@@ -22,5 +22,13 @@ class Url
     }
     header('Location: '.$result); 
    }
+   public function redirectGET($file, $address,$GET,$GETvalue){
+    if ($file == "") {
+        $result = "/qrMenu/$address.php?$GET=$GETvalue";
+    } else {
+        $result = "/qrMenu/$file/$address.php";
+    }
+    header('Location: '.$result); 
+   }
 
 }

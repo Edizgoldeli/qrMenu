@@ -1,7 +1,6 @@
 <?php
 include_once __DIR__ . "/../dbConnection.php";
-
-session_start();
+ session_start();
 $mail = $_POST['mail'];
 $password = $_POST['password'];
 

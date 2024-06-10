@@ -1,9 +1,9 @@
 <?php 
 require_once "PHP/dbConnection.php";
+$direct = new Url;
 session_start();
 
-$direct = new Url;
-
+if($_SESSION['ID'] ?? null){ $direct->redirect("HTML/Admin","mainMenu"); }else{
 ?>
 <a href="<?php $direct->directory("","index"); ?>"><img src="/qrMenu/images/return.png" alt="Geri dön" style="width:50px;height:50px; float: left;"></a>
 <div class="box1">
@@ -14,4 +14,4 @@ $direct = new Url;
         <input type="submit" class="submit" value="Giriş Yap">
     </form>
    
-</div>
+</div> <?php }
