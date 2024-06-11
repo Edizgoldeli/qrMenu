@@ -51,13 +51,13 @@ $productID = $data['productID'];
 $productid = $data['productid'];
 
 if($category == $categoryCheck){ // Checking if previous products category is same as this product
-    if($productName != $productNameCheck){ echo $productName. "<br><br>";
+    if($productName != $productNameCheck){ echo "<h2>".$productName. "</h2>";
          } //Checking if previous products name is same as previous one
        echo $optionName . " ". $optionPrice."<br>";
 }else{ 
-    echo "<br>".$category. "<br>";
+    echo "<h2>".$category. "</h2>";
     
-    echo $productName;
+    echo "<h3>".$productName. "</h3>";
     if($productName ==""){}else{
      
     echo $optionName . " " . $optionPrice."<br>";
