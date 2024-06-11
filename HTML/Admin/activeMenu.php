@@ -2,6 +2,7 @@
 <?php
 include_once "../../PHP/dbConnection.php";
 $direct = new Url; 
+$sql = new Sql; 
 ?> 
 <a href="<?php $direct->directory("HTML/Admin", "mainMenu"); ?>" title="geri">Geri Git</a> <br><br>
 <?php
@@ -33,7 +34,7 @@ LEFT JOIN
 WHERE
     menu.status = 1
 ORDER BY 
-    menu.ID, category.ID, product.ID, options.ID;
+   category.priority ASC;
 "); //We selected all binded values to menu menuID -> category names -> option names -> option prices all of them has 1:m connection
 
 $stmt->execute(); //executed our sql query
@@ -49,6 +50,9 @@ $categoryID = $data['categoryID'];
 $categoryid = $data['categoryid'];
 $productID = $data['productID'];
 $productid = $data['productid'];
+$GLOBALS["ID"] = $data['menuID'];
+$menuID = $GLOBALS["ID"];
+
 
 if($category == $categoryCheck){ // Checking if previous products category is same as this product
     if($productName != $productNameCheck){ echo "<h2>".$productName. "</h2>";
@@ -76,6 +80,7 @@ $query = $conn->query("SELECT ID, menuName FROM menu ORDER BY timeStamp DESC", P
 foreach ($query as $data) {
     $menuName = $data['menuName'];
     $ID = $data['ID'];
+    
     ?> 
     <form action="<?php $direct->directory("PHP/Admin","activeMenu"); ?>" method="POST">
     <input type="hidden" name="menuID" value="<?= htmlspecialchars($ID, ENT_QUOTES, 'UTF-8') ?>" />
@@ -83,5 +88,7 @@ foreach ($query as $data) {
 
 </form>
     <?php
-}
-  
+} 
+?> <h2>Kategori Sıralamasını Değiştir</h2><?php
+$sql->updateCategoriesOrder();
+$sql->rearrangeCategoriesOrder($menuID);
