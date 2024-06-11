@@ -2,6 +2,7 @@
 <?php
 include_once __DIR__ . "/../dbConnection.php";
 $direct = new Url; 
+$sql = new Sql;
 ?> 
 <a href="<?php $direct->directory("HTML/Admin", "currentMenus"); ?>" title="geri">Geri Git</a> <br><br>
 <?php
@@ -52,7 +53,7 @@ $productID = $data['productID'];
 $productid = $data['productid'];
 
 if($category == $categoryCheck){ // Checking if previous products category is same as this product
-    if($productName != $productNameCheck){ echo $productName. "<br><br>";
+    if($productName != $productNameCheck){ echo "<h2>".$productName. "</h2>";
         ?> <form action="<?php $direct->directory("PHP/Admin","menuEdit"); ?>" method="POST">
         <input type="hidden" name="operation" value="addOption" />
         
@@ -65,7 +66,7 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
     </form> <?php } //Checking if previous products name is same as previous one
        echo $optionName . " ". $optionPrice."<br>";
 }else{ 
-    echo "<br>".$category. "<br>";
+    echo "<h2>".$category. "</h2>";
     ?> 
 <form action="<?php $direct->directory("PHP/Admin","menuEdit"); ?>" method="POST">
     <input type="hidden" name="operation" value="addProduct" />
@@ -76,7 +77,7 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
 
  </form>
 <?php
-    echo $productName;
+   echo "<h3>".$productName. "</h3>";
     if($productName ==""){}else{
     ?> <form action="<?php $direct->directory("PHP/Admin","menuEdit"); ?>" method="POST">
     <input type="hidden" name="operation" value="addOption" />
@@ -102,4 +103,6 @@ $categoryCheck = $category;
         <input type="submit" value="Yeni Ürün Başlığı Ekle" />
 
     </form> 
-  
+  <?php
+  $sql->showCategoriesOrder($menuID);
+  ?> 
