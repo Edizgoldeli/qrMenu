@@ -104,5 +104,6 @@ $categoryCheck = $category;
 
     </form> 
   <?php
-  $sql->showCategoriesOrder($menuID);
+  $sql->updateCategoriesOrder();
+  $sql->rearrangeCategoriesOrder($menuID);
   ?> 
