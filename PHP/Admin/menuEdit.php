@@ -20,11 +20,11 @@ if(isset($menuName)){
     // Prepare the statement
     $stmt = $conn->prepare($sql);
     // Bind the parameters to the placeholders
-    $stmt->bindParam(':menuName', $menuName, PDO::PARAM_INT);
-    $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+    $stmt->bindParam(':menuName', $menuName, PDO::PARAM_STR);
+    $stmt->bindParam(':status', $status, PDO::PARAM_INT);
     // Execute the statement
     $stmt->execute();
-    $direct->redirect("PHP/Admin", "currentMenus");
+    $direct->redirect("HTML/Admin", "currentMenus");
     die();
 } else if(isset($menuID)){
 if($operation =="addProduct")
