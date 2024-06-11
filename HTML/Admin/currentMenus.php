@@ -19,3 +19,9 @@ $query = $conn->query("SELECT ID, menuName FROM menu ORDER BY timeStamp DESC", P
     </form>
         <?php
     }
+    ?> 
+        <form action="<?php $direct->directory("PHP/Admin","menuDetails"); ?>" method="POST">
+        <input type="text" name="menuName" placeholder="Menü İsmi" />
+        <input type="submit" value="Yeni Menü Ekle" />
+
+    </form> 
