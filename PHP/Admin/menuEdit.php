@@ -12,7 +12,21 @@ $productName = $_POST["productName"] ?? null;
 $optionPrice = $_POST["optionPrice"] ?? null;
 $categoryName = $_POST["categoryName"] ?? null;
 $operation = $_POST["operation"] ?? null;
-if(isset($menuID)){
+$menuName = $_POST["menuName"] ?? null;
+
+if(isset($menuName)){
+    $status = 0;
+    $sql = "INSERT INTO menu (menuName, status) VALUES (:menuName, :status)";
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+    // Bind the parameters to the placeholders
+    $stmt->bindParam(':menuName', $menuName, PDO::PARAM_INT);
+    $stmt->bindParam(':status', $status, PDO::PARAM_STR);
+    // Execute the statement
+    $stmt->execute();
+    $direct->redirect("PHP/Admin", "currentMenus");
+    die();
+} else if(isset($menuID)){
 if($operation =="addProduct")
 {
     $sql = "INSERT INTO product (categoryID, productName) VALUES (:categoryID, :productName)";
