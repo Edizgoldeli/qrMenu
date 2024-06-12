@@ -13,12 +13,12 @@ class Url
        }
        echo $result;
    }
-   public function directoryCSS($file, $address)
+   public function directoryGeneral($file, $address,$type)
    {
        if ($file == "") {
-           $result = "/qrMenu/$address.css";
+           $result = "/qrMenu/$address.$type";
        } else {
-           $result = "/qrMenu/$file/$address.css";
+           $result = "/qrMenu/$file/$address.$type";
        }
        echo $result;
    }
