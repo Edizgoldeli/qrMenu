@@ -1,49 +1,75 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-  }
-  
-  .logo-image {
-    width: 200px;
-    height: 200px;
-    background-image: url("path/to/your/image.png"); /* Replace with the path to your image */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  
-  .text-container {
-    margin-top: 30px;
-  }
-  
-  .mail,
-  .anahtar,
-  .giris {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  .mail {
-    font-size: 16px;
-    color: #aaa;
-  }
-  
-  .anahtar,
-  .giris {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .anahtar {
-    color: #333;
-  }
-  
-  .giris {
-    color: #000;
-  }
-  
+body {
+  background-attachment: fixed;
+  background-position: center top; 
+  font-family: 'Quicksand', sans-serif; /* Ensure 'Quicksand' is available */
+  font-style: normal;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: fixed; /* Make the div fixed */
+    top: 50%; /* Align the top edge of the div to the middle of the viewport */
+    left: 50%; /* Align the left edge of the div to the middle of the viewport */
+    transform: translate(-50%, -50%); /* Center the div both horizontally and vertically */
+    border: none;
+    padding: 20px; /* Add some padding */
+}
+
+.input-box1, .input-box2 {
+  margin-top: 20px; /* Vertical spacing */
+  width: 90%; /* Use a percentage for width */
+  height: 60px; /* Fixed height for input boxes */
+  background-color: #282828;
+  border: none;
+  font-size: 23px;
+  text-align: center;
+  color: #F9FEFF;
+  margin-left: auto; /* Adjust to push slightly to the right */
+  margin-right: auto; /* Center horizontally */
+}
+
+.input-box1 {
+  border-radius: 50px 50px 0 0; /* Top-left and top-right corners 50px, bottom-left and bottom-right corners 0px */
+}
+
+.input-box2 {
+  border-radius: 0 0 50px 50px; /* Top-left and top-right corners 0px, bottom-left and bottom-right corners 50px */
+}
+
+.submit-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%; /* Use the same width as the input boxes */
+  margin-top: 20px; /* Vertical spacing */
+}
+
+input[type=submit] {
+  -webkit-appearance: none;
+  margin-right: 14px;
+  width: 45%; /* Use a percentage for width */
+  height: 50px; /* Adjust the height as needed */
+  background: #282828;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  font-family: 'Quicksand', sans-serif; /* Ensure 'Quicksand' is available */
+  font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  color: #F9FEFF;
+  text-align: center;
+  float: right;
+}
+input[type=submit]:hover {
+  background: #383838; /* Change background color on hover */
+  cursor: pointer; /* Change cursor to pointer when hovering */
+}
+input[type=submit]:active {
+  transform: scale(0.98); /* Move button down slightly shrink when clicked */
+  box-shadow: none; /* Remove shadow when clicked */
+} 

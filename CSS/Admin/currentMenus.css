@@ -1,0 +1,109 @@
+body {
+    background-attachment: fixed;
+    background-position: center top; 
+    font-family: 'Quicksand', sans-serif; /* Ensure 'Quicksand' is available */
+    font-style: normal;
+  }
+  h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 45px;
+  }
+.centered-div {
+    position: fixed; /* Make the div fixed */
+    top: 50%; /* Align the top edge of the div to the middle of the viewport */
+    left: 50%; /* Align the left edge of the div to the middle of the viewport */
+    transform: translate(-50%, -50%); /* Center the div both horizontally and vertically */
+    border: none;
+    padding: 20px; /* Add some padding */
+   
+  }
+form {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items horizontally */
+    margin: 10px; /* Add some spacing between forms */
+  }
+  
+  /* Style for input[type=submit] */
+  input[type=submit] {
+    width: 100px; /* Set default width for desktop */
+    min-height: 50px;
+    padding: 5px; /* Add some padding */
+    border: none; /* Remove borders */
+    background: none; /* Remove background */
+    color: #282828; /* Text color */
+    cursor: pointer; /* Show pointer cursor on hover */ 
+    font-size: 37px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    font-weight: 100;
+  }
+  input[type=submit]:hover {
+    background-color: rgba(40, 40, 40, 0.1); /* 10% opacity of #282828 color */
+    border-radius: 20px;
+  }
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    /* Adjust width for tablets */
+    input[type=submit] {
+      width: 100%; /* Set width for tablets */
+      max-width: none; /* Disable max-width */
+    }
+  }
+  @media (min-width: 769px) {
+    /* Adjust width for desktop */
+    input[type=submit] {
+      width: 350px; /* Set width for desktop */
+    }
+  }
+  /* Style for text input fields */
+  input[type="text"] {
+    width: 55%; /* Set the width to 100% of the container */
+    margin-left: 25px; /* Add padding for spacing */
+    border: none; /* Add a border with a light gray color */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #D9D9D9; /* Add a light background color */
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 30px; /* Specify the font size */
+    color: #282828; /* Specify the text color */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */ 
+    text-align: center; /* Align text to the center */
+    
+}
+
+  
+  /* Hover effect for text input fields */
+  input[type="text"]:hover,
+  input[type="text"]:focus {
+    border-color: #282828; /* Change border color on hover and focus */
+  }
+ 
+input[type="image"]:focus {
+  transform: scale(0.8);
+}
+
+#hidden-content {
+  display: none;
+}
+
+#hidden-content:target {
+  display: block;
+}
+.plus-image {
+  width: auto; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */ 
+  cursor: pointer;
+}
+
+#hidden-content + a[href="#hidden-content"] .plus-image:target {
+  opacity: 0; 
+}
+#toggle-link {
+  display: flex;
+  justify-content: center; /* Align items horizontally at the center */
+  align-items: center; /* Align items vertically at the center */
+  cursor: pointer; /* Change cursor to pointer */
+  margin-top: 20px; /* Adjust margin as needed */
+}
