@@ -1,0 +1,46 @@
+body {
+    background-attachment: fixed;
+    background-position: center top;
+    background-color: #F9FEFF;
+    font-family: 'Quicksand', sans-serif;
+    color: #282828;
+    font-style: normal;
+    width: 100%;
+} 
+.categoryName {
+    padding-top: 20px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 48px;
+}
+.productName {
+    margin-left: 13px;
+    text-align: left;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.optionName, .optionPrice {
+    font-size: 28px;
+}
+.optionContainer{ 
+    justify-content: space-between; /* Adjust the space between the items as needed */
+    width: 100%; /* Ensure the container takes up the full width */
+}
+ 
+.optionName {
+    width: 72%;
+    float: left;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+}
+
+.optionPrice {
+    width: 25%;
+    float: right;
+    justify-content: left;
+        text-align: right;
+        display: flex;
+
+}
