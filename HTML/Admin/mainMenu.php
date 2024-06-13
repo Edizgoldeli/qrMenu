@@ -14,7 +14,7 @@ $direct = new Url; ?>
  <body>
 <?php
 session_start();
-if($_SESSION['ID']){}else{$direct->redirect("","index");}
+if($_SESSION['ID']){}else{$direct->redirect("HTML","login");}
 
 ?> <a href="<?php echo $direct->directory("PHP/Admin", "logout"); ?>" title="Çıkış Yap">
 <img src="<?php echo $direct->directoryGeneral("images", "goBackArrow", "png"); ?>" alt="Geri Git">
