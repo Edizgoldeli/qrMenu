@@ -1,13 +1,12 @@
 <?php
 include_once __DIR__ . "/../dbConnection.php";
- session_start();
+$encode = new Hash;
+$direct = new Url;
+session_start();
 $mail = $_POST['mail'];
 $password = $_POST['password'];
 
-$encode = new Hash;
-$direct = new Url;
 $sorgu = $conn->query("SELECT * from users where mail = '$mail' ", PDO::FETCH_ASSOC);
-
 
     foreach ($sorgu as $data) {
         $passwordHash = $data['password'];
