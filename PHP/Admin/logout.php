@@ -5,4 +5,4 @@ session_start();
 unset($_SESSION['ID']);
 
 $a = new Url;
-$a->redirect("PHP/Admin","login");
+$a->redirect("HTML","login");
