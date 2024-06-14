@@ -6,7 +6,7 @@ $direct = new Url; ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.8" />
-    <link rel=stylesheet href="<?php $direct->directoryGeneral("CSS/Admin", "currentMenus", "CSS"); ?>" />
+    <link rel=stylesheet href="<?php $direct->directoryGeneral("CSS/Admin", "currentMenus", "css"); ?>" />
     <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <title>Menu</title>
 
