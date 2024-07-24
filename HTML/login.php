@@ -19,7 +19,7 @@ if($_SESSION['ID'] ?? null){ $direct->redirect("HTML/Admin","mainMenu"); }else{
 
    <div class="box1">
    <img src="<?php echo $direct->directoryGeneral("images","logo","png"); ?>" alt="Login Image" draggable="false" onmousedown="return false;">
-    <H1>TAKAGU</H1>
+    <H1>Admin</H1>
     <form action="<?php $direct->directory("PHP/Admin","login"); ?>" method="POST">
         <input class="input-box1" type="email" class="input1" name="mail" placeholder="Mail" required><br>
         <input class="input-box2" type="password" class="input2" name="password" placeholder="Password" required><br><br>

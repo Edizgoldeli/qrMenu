@@ -1,4 +1,5 @@
 body {
+    padding-left: 5%;
     background-attachment: fixed;
     background-position: center top;
     background-color: #F9FEFF;
@@ -6,6 +7,7 @@ body {
     color: #282828;
     font-style: normal;
     width: 100%;
+    overflow-x:hidden; 
 } 
 .categoryName {
     padding-top: 20px;

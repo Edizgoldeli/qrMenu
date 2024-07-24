@@ -32,7 +32,7 @@ $direct = new Url; ?>
         $menuName = $data['menuName'];
         $ID = $data['ID'];
         ?>
-        <form action="<?php $direct->directory("PHP/Admin", "menuDetails"); ?>" method="POST">
+        <form action="<?php $direct->directory("HTML/Admin", "menuDetails"); ?>" method="POST">
             <input type="hidden" name="menuID" value="<?= htmlspecialchars($ID, ENT_QUOTES, 'UTF-8') ?>" />
             <input type="submit" value="<?= htmlspecialchars($menuName, ENT_QUOTES, 'UTF-8') ?>" />
 

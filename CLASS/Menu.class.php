@@ -5,7 +5,7 @@ class Menu
     {
         global $conn;
         ?>
-        <div class="container">
+         
             <?php
             $stmt = $conn->prepare("
                 SELECT 
@@ -70,7 +70,7 @@ class Menu
                 }
             }
             ?>
-        </div> 
+        
         <?php
     }
 }

@@ -4,7 +4,8 @@ include_once __DIR__ . "/../dbConnection.php";
 $direct = new Url; 
 $sql = new Sql;
 ?> 
-<a href="<?php $direct->directory("HTML/Admin", "currentMenus"); ?>" title="geri">Geri Git</a> <br><br>
+<a href="<?php $direct->directory("HTML/Admin", "currentMenus"); ?>" title="geri"><img src="<?php echo $direct->directoryGeneral("images", "goBackArrow", "png"); ?>" alt="Geri Git"></a> <br><br>
+
 <?php
 session_start();
 if($_SESSION['ID']){}else{$direct->redirect("","index");}
@@ -62,9 +63,9 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
         <input type="hidden" name="menuID" value="<?= htmlspecialchars($menuID, ENT_QUOTES, 'UTF-8') ?>" />
         <input type="text" name="optionName" placeholder="Option Name" required/>
         <input type="number" name="optionPrice" step="0.5" min="0" placeholder="Option Price" required>
-        <input type="submit" value="Opsiyonu Ekle" />
+        <input type="submit" value="+" />
     </form> <?php } //Checking if previous products name is same as previous one
-       echo $optionName . " ". $optionPrice."<br>";
+       echo "<p>".$optionName . " ". $optionPrice."</p>";
 }else{ 
     echo "<h2>".$category. "</h2>";
     ?> 
@@ -73,7 +74,7 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
     <input type="hidden" name="categoryID" value="<?= htmlspecialchars($categoryid, ENT_QUOTES, 'UTF-8') ?>" />
     <input type="hidden" name="menuID" value="<?= htmlspecialchars($menuID, ENT_QUOTES, 'UTF-8') ?>" />
     <input type="text" name="productName" placeholder="Product Name" required/>
-    <input type="submit" value="Ürün Ekle" />
+    <input type="submit" value="+" />
 
  </form>
 <?php
@@ -86,9 +87,9 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
     <input type="hidden" name="menuID" value="<?= htmlspecialchars($menuID, ENT_QUOTES, 'UTF-8') ?>" />
     <input type="text" name="optionName" placeholder="Option Name" required/>
     <input type="number" name="optionPrice" step="0.5" min="0" placeholder="Option Price" required>
-    <input type="submit" value="Opsiyonu Ekle" />
+    <input type="submit" value="+" />
 </form> <?php
-    echo $optionName . " " . $optionPrice."<br>";
+    echo "<p>".$optionName . " " . $optionPrice."</p>";
     }
 }
    
@@ -100,7 +101,7 @@ $categoryCheck = $category;
         <input type="hidden" name="menuID" value="<?= htmlspecialchars($menuID, ENT_QUOTES, 'UTF-8') ?>" />
         <input type="hidden" name="operation" value="addCategory" /> 
         <input type="text" name="categoryName" placeholder="Category Name" required/>
-        <input type="submit" value="Yeni Ürün Başlığı Ekle" />
+        <input type="submit" value="+" />
 
     </form> 
   <?php
