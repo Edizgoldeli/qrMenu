@@ -65,7 +65,7 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
         <input type="number" name="optionPrice" step="0.5" min="0" placeholder="Option Price" required>
         <input type="submit" value="+" />
     </form> <?php } //Checking if previous products name is same as previous one
-       echo "<p>".$optionName . " ". $optionPrice."</p>";
+       echo "<p>".$optionName . " ". $optionPrice."₺</p>";
 }else{ 
     echo "<h2>".$category. "</h2>";
     ?> 
@@ -89,7 +89,7 @@ if($category == $categoryCheck){ // Checking if previous products category is sa
     <input type="number" name="optionPrice" step="0.5" min="0" placeholder="Option Price" required>
     <input type="submit" value="+" />
 </form> <?php
-    echo "<p>".$optionName . " " . $optionPrice."</p>";
+    echo "<p>".$optionName . " " . $optionPrice."₺</p>";
     }
 }
    
@@ -103,8 +103,51 @@ $categoryCheck = $category;
         <input type="text" name="categoryName" placeholder="Category Name" required/>
         <input type="submit" value="+" />
 
-    </form> 
+    </form> <div id="loading" style="display:none;">
+  <img src="https://i.gifer.com/g0R5.gif" alt="Loading..." style="width: 40px; height: 40px;">
+</div>
+<div id="content">
   <?php
   $sql->updateCategoriesOrder();
   $sql->rearrangeCategoriesOrder($menuID);
-  ?> 
+  ?> </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function loadData() {
+    let loaderTimeout;
+
+    // Set a timeout to show the loader after 1000ms
+    loaderTimeout = setTimeout(function() {
+      document.getElementById('loading').style.display = 'block';
+    }, 1000);
+
+    $.ajax({
+      url: 'path-to-your-php-script.php',
+      type: 'POST',
+      data: { menuID: 'your-menu-id' },
+      success: function(response) {
+        // Clear the loader timeout if the request completes before 1000ms
+        clearTimeout(loaderTimeout);
+
+        // Hide the loader if it was shown
+        document.getElementById('loading').style.display = 'none';
+
+        // Display the result in the content div
+        document.getElementById('content').innerHTML = response;
+      },
+      error: function() {
+        // Clear the loader timeout if the request completes before 1000ms
+        clearTimeout(loaderTimeout);
+
+        // Hide the loader if it was shown
+        document.getElementById('loading').style.display = 'none';
+ 
+      }
+    });
+  }
+
+  // Call loadData() when the page loads
+  window.onload = loadData;
+</script>
+
