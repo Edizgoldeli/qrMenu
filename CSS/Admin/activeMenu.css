@@ -1,5 +1,5 @@
-body {
-    padding-left: 5%;
+body { 
+    padding-left: 2%;
     background-attachment: fixed;
     background-position: center top;
     background-color: #F9FEFF;
@@ -9,6 +9,24 @@ body {
     width: 100%;
     overflow-x:hidden; 
 } 
+@media (min-width: 480px) {
+    /* Adjust width for desktop */
+    body {
+        padding-left: 5%;
+    }
+  }
+  @media (min-width: 750px) {
+    /* Adjust width for desktop */
+    body {
+        padding-left: 7.5%;
+    }
+  }
+  @media (min-width: 1000px) {
+    /* Adjust width for desktop */
+    body {
+        padding-left: 10%;
+    }
+  }
 .categoryName {
     padding-top: 20px;
     text-align: left;
