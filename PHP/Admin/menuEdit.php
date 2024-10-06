@@ -37,7 +37,7 @@ if($operation =="addProduct")
     $stmt->bindParam(':productName', $productName, PDO::PARAM_STR);
     // Execute the statement
     $stmt->execute();
-    $direct->redirectGET("PHP/Admin", "menuDetails","menuID","$menuID");
+    $direct->redirectGET("HTML/Admin", "menuDetails","menuID","$menuID");
     die();
 }
 if($operation =="addOption")
@@ -51,7 +51,7 @@ if($operation =="addOption")
     $stmt->bindParam(':optionPrice', $optionPrice, PDO::PARAM_INT);
     // Execute the statement
     $stmt->execute();
-    $direct->redirectGET("PHP/Admin", "menuDetails","menuID","$menuID");
+    $direct->redirectGET("HTML/Admin", "menuDetails","menuID","$menuID");
     die();
 }
 if($operation =="addCategory")
@@ -64,8 +64,8 @@ if($operation =="addCategory")
         $stmt->bindParam(':categoryName', $categoryName, PDO::PARAM_STR);
         // Execute the statement
         $stmt->execute();
-        $direct->redirectGET("PHP/Admin", "menuDetails","menuID","$menuID");
+        $direct->redirectGET("HTML/Admin", "menuDetails","menuID","$menuID");
         die();
 }}
-    $direct->redirectGET("PHP/Admin","menuDetails");
+    $direct->redirectGET("HTML/Admin","menuDetails","","");
     die();
